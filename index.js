@@ -244,7 +244,7 @@ class WebpackAliyunOss {
 			else basePath = path.resolve(buildRoot)
 		}
 
-		return slash(basePath)
+		return process.platform == 'win32' ? basePath : slash(basePath)
 	}
 
 	fileExists(filepath) {
